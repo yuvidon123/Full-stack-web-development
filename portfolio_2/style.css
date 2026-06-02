@@ -32,36 +32,61 @@ hr {
 }
 
 main {
-    padding: 10% 15% 10% 15%;
+    padding: 8% 15% 8% 15%;
     display: flex;
 }
 
-section-1 .title {
-    display: inline;
+main .section-1 {
+    display: block;
+
+}
+
+.section-1 .title {
+    display:block;
     color: rgb(246, 119, 119);
     font-family: 'DM Sans', sans-serif;
     letter-spacing: 10%;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 70%;
-    width:80% ;
-    border-bottom: 1.7px  solid  rgb(218, 5, 5) ;
-    height: 200px;
-    padding-bottom: 2px;
+    width: fit-content;
+    border-bottom: 2px solid rgb(218, 5, 5);
+    height: 20px;
+    margin-bottom: 10%;
 }
 
-section-1 h1{
-     font-family: 'DM Sans', sans-serif;
-     color:white;
+.heroname pre{
+    font-family:'DM Serif Display', serif;
+    display: inline;
+
+}
+.heroname{
+    display: inline-block;
+    font-size: 200%;
+    font-family:fantasy;
+    font-weight:400;
+    text-shadow: 3px 0 currentColor;
+    line-height: 1.1;
+    transform: scaleY(1.2);
+
 }
 
-section-2 {
+.explainContent pre {
+    display: block;
+    color: rgb(8, 8, 8);
+    margin-top:0px ;
+    font-size: 120%;
+    font-family: 'DM Sans', sans-serif;
+    font-style: italic;
+}
+
+.section-2 {
     display: flex;
     justify-content: right;
     margin-right: 10%;
 }
 
-.img {
-    width: 50%;
+.section-2 .img {
+    width: 70%;
     height: 110%;
 }
