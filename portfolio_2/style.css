@@ -16,9 +16,9 @@ header {
     padding: 1% 7% 1% 7%;
 }
 
-header p {
+header .logo {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 150%;
+    font-size: 1.5vw;
     font-weight: bold;
     margin: 0% 10% 0% 15%;
 }
@@ -27,7 +27,7 @@ header nav-bar {
     font-family: monospace;
     transform: scaleX(1.2);
     margin: 0.2% 0% 0% 35%;
-    font-size: 120%;
+    font-size: 1vw;
     color: rgb(131, 131, 131);
     gap: 22%;
 }
@@ -50,12 +50,12 @@ main .section-1 {
 
 .section-1 .title {
     display: block;
-    color: rgb(246, 119, 119);
+    color: rgb(255, 113, 113);
     font-family: 'DM Sans', sans-serif;
     letter-spacing: 10%;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 70%;
+    font-size: 0.7vw;
     width: fit-content;
     border-bottom: 2px solid rgb(218, 5, 5);
     height: 20px;
@@ -70,9 +70,9 @@ main .section-1 {
 
 .heroname {
     display: block;
-    font-size: 210%;
+    font-size: 2vw;
     font-weight: bolder;
-    text-shadow: 3px 0 currentColor;
+    text-shadow: 1px 0 currentColor;
     line-height: 1.1;
     transform: scaleY(1.2);
     /* border: 2px solid black; */
@@ -84,7 +84,7 @@ main .section-1 {
     display: block;
     color: rgb(112, 112, 112);
     margin-top: 0px;
-    font-size: 100%;
+    font-size: 0.7;
     font-family: 'DM Sans';
     font-style: italic;
     line-height: 25px;
@@ -93,16 +93,12 @@ main .section-1 {
 }
 
 .section-2 {
-    margin-left: 10%;
     display: flex;
     justify-content: right;
     margin-left: 20%;
 }
 
-.section-2 .img {
-    width: 80%;
-    height: 100%;
-}
+
 
 .section-1 button {
     background-color: black;
