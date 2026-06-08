@@ -111,21 +111,28 @@ main .section-1 {
 }
 
 .about-me {
+    background-color: rgba(137, 87, 79);
     display: flex;
     justify-content: center;
-    background-color: rgba(137, 87, 79);
+}
+
+.inside-about {
+    display: flex;
+    width: 60%;
 }
 
 .work-1 {
     color: rgb(189, 189, 189);
     font-size: 400%;
     font-weight: bolder;
-    margin: 4% 5% 5% 25%;
-}
+    margin: 4% 5% 5% 0%;
+}   
 
 .contextof-about-me {
-    margin: 4% 16% 5% 10%;
-    width: 100%;
+    justify-content:right;
+    align-items:end;
+    margin: 4% 0% 5% 30%;
+    width: 60%; 
     color: var(--color);
 }
 
@@ -163,9 +170,9 @@ main .section-1 {
 
 .selected-work {
     margin: 0 auto;
-    width: 50%;
+    width: 60%;
     padding: 5% 0% 5% 0%;
-        font-family: var(--font-family);
+    font-family: var(--font-family);
 
 }
 
@@ -174,8 +181,8 @@ main .section-1 {
     font-family: var(--font-family);
     display: flex;
     justify-content: space-between;
-    height:fit-content;
-}
+    height: fit-content;
+}   
 
 .nav-head .work-2 {
     align-items: right;
@@ -183,33 +190,44 @@ main .section-1 {
     color: rgba(137, 87, 79, 0.414);
 }
 
-.selected-work .context .project-grid{
+.selected-work .context .project-grid {
     display: flex;
 }
 
-.project-card{
-    margin-right:5%;
-}
-.project-card .img{
-    padding:30%;
+.project-card {
+    margin-right: 2%;
 }
 
-.project-card #img-1{
-    background-color: rgb(255, 251, 176);
+.project-card .img {
+    padding: 30%;
 }
 
+.project-card #img-1 {  
+    background-color: rgba(255, 251, 176, 0.605);
+}
+.project-card #img-2 {  
+    background-color: rgba(175, 238, 255, 0.587);
+}
+.project-card #img-3 {  
+    background-color: rgba(190, 255, 176, 0.578);
+}
 .project-card .content {
-    padding: 5%;
+    padding: 10%;
     background-color: white;
 }
 
-.project-card .content ul{
-    display: flex;
-    color:rgba(189, 6, 6, 0.667);
-    font-size:0.8vw;
-    font-weight:lighter; 
+.project-card .content p {
+    color: rgb(97, 97, 97);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.project-card .content ul li{
-    margin-right:8%;
+.project-card .content ul {
+    display: flex;
+    color: rgba(189, 6, 6, 0.667);
+    font-size: 0.8vw;
+    font-weight: lighter;
+}
+
+.project-card .content ul li {
+    margin-right: 8%;
 }
