@@ -161,19 +161,55 @@ main .section-1 {
     margin-right: 2%;
 }
 
-.selected-work{
+.selected-work {
     margin: 0 auto;
-    width: fit-;
+    width: 50%;
+    padding: 5% 0% 5% 0%;
+        font-family: var(--font-family);
+
 }
 
-.nav-head{
+.selected-work .nav-head {
+    font-size: 1.3vw;
+    font-family: var(--font-family);
     display: flex;
     justify-content: space-between;
+    height:fit-content;
 }
 
-.nav-head .work-2{
+.nav-head .work-2 {
     align-items: right;
+    font-size: 2.3vw;
+    color: rgba(137, 87, 79, 0.414);
 }
 
-.selected-work .context{
+.selected-work .context .project-grid{
+    display: flex;
+}
+
+.project-card{
+    margin-right:5%;
+}
+.project-card .img{
+    padding:30%;
+}
+
+.project-card #img-1{
+    background-color: rgb(255, 251, 176);
+}
+
+.project-card .content {
+    padding: 5%;
+    background-color: white;
+}
+
+.project-card .content ul{
+    display: flex;
+    color:rgba(189, 6, 6, 0.667);
+    font-size:0.8vw;
+    font-weight:lighter; 
+}
+
+.project-card .content ul li{
+    margin-right:8%;
 }
