@@ -114,6 +114,7 @@ main .section-1 {
     background-color: rgba(137, 87, 79);
     display: flex;
     justify-content: center;
+    
 }
 
 .inside-about {
@@ -123,7 +124,7 @@ main .section-1 {
 
 .work-1 {
     color: rgb(189, 189, 189);
-    font-size: 400%;
+    font-size: 4vw;
     font-weight: bolder;
     margin: 4% 5% 5% 0%;
 }   
@@ -224,10 +225,29 @@ main .section-1 {
 .project-card .content ul {
     display: flex;
     color: rgba(189, 6, 6, 0.667);
-    font-size: 0.8vw;
+    font-size: 0.7vw;
     font-weight: lighter;
 }
 
+
 .project-card .content ul li {
     margin-right: 8%;
+}
+
+.project-card .content h2{
+    margin:2% 0% 2% 0%;
+}
+
+.project-card .content p{
+    line-height: 150%;
+    margin-bottom:7%;
+}
+
+.project-card .content a{
+    color:brown;   
+    text-decoration: none;
+}
+
+.project-card .content a::after{
+    content:" ➜";
 }
