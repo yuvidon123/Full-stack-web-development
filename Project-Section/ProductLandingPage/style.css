@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+    width: auto;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #14110f;
+    
+}
+
+.nav-header{
+    display:flex;
+}
+
+.logo-name{
+    color:#e0a45e;
+    display:inline-block;
+}
+
+.nav-bar ul{
+    color:white;
+    display:flex;
+    list-style-type:none;
+    padding:;
+    
+}
+
