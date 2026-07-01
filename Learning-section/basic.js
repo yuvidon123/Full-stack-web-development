@@ -18,11 +18,20 @@
 
 // INTERPOLAION 
 // Template strings allow variable in strings  
-let str1 = "hlo"
-let str2 = "world"
-let str3 = `${str1}, ${str2} in javascript`    
-// This help to use string variable inside the string easily.
-console.log(str3)
-let experiment = `${2 + 2}`
-console.log(experiment) // The output is 4 without any error
-console.log(typeof(experiment)); // And the type of 4 is string.
+// let str1 = "hlo"
+// let str2 = "world"
+// let str3 = `${str1}, ${str2} in javascript`    
+// // This help to use string variable inside the string easily.
+// console.log(str3)
+// let experiment = `${2 + 2}`
+// console.log(experiment) // The output is 4 without any error
+// console.log(typeof(experiment)); // And the type of 4 is string.
+
+// Ternary Operator
+let age = 20
+let x  = (age < 18) ? "Minor" : "Adult"
+console.log(x)
+
+let name = "yuvi" // ""--> This help to store, display, concate the string 
+let name1 = /yuvi/ // (//) --> This is Regular Expression. It help to help to recoganize patterns like search patterns.
+                    // And their typeOf is Object
