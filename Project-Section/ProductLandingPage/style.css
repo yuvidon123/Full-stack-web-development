@@ -49,7 +49,7 @@ ul {
 .main-content {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 62%;
     padding: 80px 0px 70px 30px;
     max-width: 980px;
     margin: 0 auto;
@@ -90,50 +90,89 @@ ul {
 
 .features {
     background-color: #151310;
-    margin:0 auto ;
-    padding-bottom:80px;
+    margin: 0 auto;
+    padding-bottom: 80px;
 }
 
-.heading{   
-    color:var(--primary-color);
+.heading {
+    color: var(--primary-color);
     text-align: center;
-    padding:70px 0px 70px 0px;
-    font-size: 20px;
+    padding: 70px 0px 70px 0px;
+    font-size: 17px;
 }
 
 .boxes-section {
     display: flex;
-    justify-content:center;
-    margin:0 auto;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .box {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     background-color: var(--background-color);
     text-align: center;
-    margin-right:25px;
-    border:solid 2px rgb(51, 49, 43);
+    margin-right: 25px;
+    border: solid 2px rgb(51, 49, 43);
     border-radius: 15px;
-    width:290px;
+    width: 290px;
     height: 230px;
 }
 
-.icon-box{
+.icon-box {
     font-size: 40px;
-    /* margin: 35px 0px 15px 0px; */
 }
 
-.box h3{
-    color:var(--primary-color);
-    /* padding-bottom:30px; */
+.box h3 {
+    color: var(--primary-color);
 }
 
-.box p{
-    color:var(--secondary-color);
+.box p {
+    color: var(--secondary-color);
     font-size: 16px;
     width: 230px;
     line-height: 25px;
+}
+
+.price-plan .heading {
+    font-size: 17px;
+}
+
+.plan-container {
+    display: flex;
+    justify-content: center;
+}
+
+.plan {
+    display: block;
+    background-color: #0f0e0b;
+    margin-right: 24px;
+    height: 400px;
+    width: 290px;
+    border: solid 2px rgb(51, 49, 43);
+    border-radius: 15px;
+}
+
+.plan-name {
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 45px;
+}
+
+.price {
+    display:flex;
+    justify-content: center;
+    text-align:center;
+    margin-top:30px;
+    color:var(--secondary-color);
+}
+
+.price .price-number{
+    font-size: 40px;
+    font-weight: bold;
+    color:white;
 }
