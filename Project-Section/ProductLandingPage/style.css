@@ -143,16 +143,20 @@ ul {
 .plan-container {
     display: flex;
     justify-content: center;
+    gap: 1.5rem;
+    padding-bottom: 50px;
 }
 
 .plan {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #0f0e0b;
-    margin-right: 24px;
-    height: 400px;
-    width: 290px;
+    height: 380px;
+    width: 250px;
     border: solid 2px rgb(51, 49, 43);
     border-radius: 15px;
+    padding-top: 10px;
 }
 
 .plan-name {
@@ -163,16 +167,57 @@ ul {
     margin-top: 45px;
 }
 
-.price {
-    display:flex;
-    justify-content: center;
-    text-align:center;
-    margin-top:30px;
-    color:var(--secondary-color);
+#popular-plan {
+    border: 3px solid #e0a45e;
+    height: 400px;
+    width: 260px;
+    margin-top: -10px;
 }
 
-.price .price-number{
+.price {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+    color: var(--secondary-color);
+}
+
+.month {
+    padding-top: 20px;
+}
+
+.price .price-number {
     font-size: 40px;
     font-weight: bold;
-    color:white;
+    color: white;
+}
+
+.plan-benefits ul {
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 80px 0px 0px;
+    height: 120px;
+}
+
+.plan-benefits ul li {
+    margin-bottom: -8px;
+}
+
+.plan button {
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: var(--primary-color);
+    padding: 15px 25px;
+    width: 180px;
+}
+
+.footer{
+    color: var(--secondary-color);
+    text-align: center;
+    padding:40px 0px 30px 0px;
+    background-color: #0f0e0b;
+    font-size: 14px;
 }
