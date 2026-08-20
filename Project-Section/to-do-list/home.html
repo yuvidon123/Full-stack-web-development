@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+  </head>
+  <body>
+    <header>
+      <div class="heroname">Todo</div>
+
+      <!-- input date from javascript. -->
+      <div class="date"></div>
+    </header>
+
+    <div class="main">
+      <form>
+        <input
+          type="text"
+          id="task"
+          placeholder=" Add a task and press Enter "
+        />
+        <button type="add">Add</button>
+      </form>
+      <div class="filters">
+        <button class="data-filter" id = "filter-all">All</button>
+        <button class="data-filter" id = "filter-active">Active</button>
+        <button class="data-filter" id = "filter-done">Done</button>
+      </div>
+      <div class="empty-msg">Nothing here. Add a task above</div>
+    </div>
+
+    <div class="footer">
+        <div class="task-left">0 Tasks left</div>
+        <button id = "clearDoneButton"> Clear Completed</button>
+    </div>
+  </body>
+</html>
