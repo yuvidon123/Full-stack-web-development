@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(23, 22, 22);
+}
+
+.heroname{
+    color:rgba(255, 197, 88, 0.749);
+    font-weight: bold;
+    font-size: 25px;
+}
