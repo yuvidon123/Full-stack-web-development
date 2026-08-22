@@ -1,15 +1,34 @@
-*{
-    margin : 0;
-    padding : 0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: black;
-    color:white;
+    color: white;
 }
 
-header, main{
+header,
+main {
     text-align: center;
-    font-size:30px;
+    font-size: 30px;
+}
+
+.output {
+    padding: 50px;
+}
+
+.input-buttons {
+    display: inline-grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+.input-buttons button {
+    font-size: 30px;
+    background-color: rgb(78, 77, 77);
+    color: white;
+    padding:10px ;
 }
