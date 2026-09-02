@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+</style>
+
+<body>
+
+    <script>
+
+        // lets create the calculator
+        function calculator() {
+
+            //input 1st number, 2nd number and operator
+            let inputNum1 = Number(prompt("Enter the 1st value"));
+            let inputNum2 = Number(prompt("Enter the 2nd value here"));
+            let inputOperator = prompt("Enter the operator here");
+
+
+            if (inputOperator == '+') {
+                console.log(add(inputNum1, inputNum2));
+            } else if (inputOperator == '-') {
+                console.log(sub(inputNum1, inputNum2));
+            } else if (inputOperator == '*') {
+                console.log(mul(inputNum1, inputNum2));
+            } else if (inputOperator == '/') {
+                console.log(divide(inputNum1, inputNum2));
+            }
+
+            // Adding function
+            function add(a, b) {
+                return a + b;
+            }
+
+            // Substration function
+            function sub(a, b) {
+                return a - b;
+            }
+
+            // Multiplication Function
+            function mul(a, b) {
+                return a * b;
+            }
+
+            // divide function
+            function divide(a, b) {
+                return a / b;
+            }
+        }
+
+        // call the function
+        // calculator();
+
+        function bankSimulator() {
+
+            //set balance at 0
+            let balance = 0;
+
+            // create temporary variable to store user value and also set at 0 for resetting value;
+            let amount = 0;
+
+            //take the input for deposit/withdraw/checkBalance
+            let inputNum = Number(prompt("Enter the 1 number to deposit money\nEnter the 2 number to withdraw\n Enter the 3 to check balance\nEnter 4 to clear balance"));
+
+            while (inputNum != 4) {
+
+                if (inputNum == 1) {
+                    deposit();
+                } else if (inputNum == 2) {
+                    withdraw();
+                } else if (inputNum == 3) {
+                    checkBalance();
+                } else {
+                    if (balance == 0) {
+                        console.log("Your successfully close your account");
+                        // this else with continue running loop to clear account
+                        break;
+                    } else {
+                        inputNum = 3;
+                        console.log("Pls first clear your balance before closing the account the account");
+                    }
+                }
+
+                //take the input for deposit/withdraw/checkBalance
+                inputNum = Number(prompt("Enter the 1 number to deposit money\nEnter the 2 number to withdraw\nEnter the 3 to check balance\nEnter 4 to clear balance"));
+
+            }
+
+
+
+            function deposit() {
+                amount = Number(prompt("Enter the amount"));
+                balance += amount;
+
+                console.log(`Your deposit money =  ${amount}`);
+                console.log(`Your current Balance = ${balance}`);
+            }
+
+            function withdraw() {
+
+                amount = Number(prompt("Enter the amount"));
+
+                if (amount > balance) {
+                    console.log("Your amount is large than balance. Pls enter the lesser amount")
+                } else {
+                    balance -= amount;
+
+                    console.log(`Your withdraw amount = ${amount}`);
+                    console.log(`Your current Balance = ${balance}`);
+                }
+            }
+
+            function checkBalance() {
+
+                console.log(`Your current Balance = ${balance}`);
+            }
+        }
+
+        // bankSimulator();
+
+    </script>
+</body>
+
+</html>

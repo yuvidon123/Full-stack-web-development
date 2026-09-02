@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  style="background-color: black;">
+    <h1  style="color:white;">OPEN THE CONSOLE NOOB</h1>
+    <script> 
+        let age = prompt("Enter your age Pls");
+
+// example of regular function
+if (age < 20) {
+    function welcome() {
+        console.log("Hlo regular function");
+    }
+} else {
+    function welcome() {
+        console.log("Hi regular function");
+    }
+}
+
+// after if we want to use welcome function outside the block ;
+welcome();
+// it will work in javacript
+
+// eg of expression function
+let welcomeAgain;
+
+if (age < 20) {
+    welcomeAgain = function () {
+        console.log("Hlo expression func");
+    };
+} else {
+    welcomeAgain = function () {
+        console.log("Hi expression func");
+    };
+}
+
+// what if we want to use welcomeAgain func outside the block;
+welcomeAgain();
+// It will also work
+
+// the main difference b/w regular and expression function
+
+// 1. We cannot call function before declare in exxpression . But we call function before declare the function in regular function.
+// eg of regular function
+func();
+
+function func() {
+    console.log("Hlo there");
+}
+// func() is working 
+
+//eg of expression function
+exFun();
+
+let exFun = function() {
+    console.log("Hi there");
+};
+// now exFun will give me error;
+    </script>
+</body>
+</html>
