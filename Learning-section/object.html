@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: black;">
+    <script>
+        // learning object
+
+        // declaring an object
+        let user = {
+            name: "yuvi",
+            age: 21
+        };
+
+        console.log(user.name);
+        console.log(user.age);
+
+        // --> Add the key in an object
+        user.sex = "male";
+
+        console.log(user);
+        // Now sex is add in user object
+
+        // ----> importance of square brackets[]
+
+        // lets add new key without square brackets
+        // user.admin access = true;
+        // This will through SyntaxError 
+
+        // user []
+        user["admin access"] = true;
+
+
+
+    </script>
+</body>
+
+</html>
