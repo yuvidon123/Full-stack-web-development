@@ -133,25 +133,66 @@
             // hello();
 
             // Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+            function chckSchdule() {
+                let schedule = {
+                    ["7 : 00"]: "PR review"
+                }
 
-            let schedule = {
-                ["7 : 00"]: "PR review"
+                let time = ("7 : 00");
+
+                // console.log(time);
+                // console.log(schedule);
+                // console.log(time in schedule);
+
+                let keyElement = Object.keys(schedule);
+
+                if ((time in schedule)) {
+                    console.log("There is Schdule at", time, "of", schedule["7 : 00"]);
+                } else {
+                    console.log("Free No Schedule");
+                }
             }
 
-            let time = ("7 : 00");
+            // chckSchdule();
 
-            // console.log(time);
-            // console.log(schedule);
-            // console.log(time in schedule);
+            //Sum object properties
+            function sumOfSalary() {
+                let salaries = {
+                    John: 100,
+                    Ann: 160,
+                    Pete: 130
+                }
 
-            let keyElement = Object.keys(schedule);
+                let sum = 0;
 
-            if ((time in schedule)) {
-                console.log("There is Schdule at", time, "of", schedule["7 : 00"]);
-            } else {
-                console.log("Free No Schedule");
+                for (let keys in salaries) {
+                    sum += salaries[keys];
+                }
+
+                console.log(sum);
             }
 
+            // sumOfSalary();
+
+            // Multiply numeric property values by 2
+            function multiplyNumeric() {
+
+                let menu = {
+                    width: 200,
+                    height: 300,
+                    title: "My menu"
+                };
+
+                for (let keys in menu) {
+                    if (typeof menu[keys] == Number) {
+                        menu[keys] *= 2;
+                    }
+                }
+
+                console.log(menu);
+            }
+
+            multiplyNumeric();
         }
 
         practiceObj();
