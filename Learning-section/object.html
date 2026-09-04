@@ -9,31 +9,152 @@
 
 <body style="background-color: black;">
     <script>
+
         // learning object
+        let learnObj = function () {
 
-        // declaring an object
-        let user = {
-            name: "yuvi",
-            age: 21
-        };
+            // declaring an object
+            let user = {
+                name: "yuvi",
+                age: 21
+            };
 
-        console.log(user.name);
-        console.log(user.age);
+            // accessing keys in an object
+            console.log(user.name);
+            console.log(user.age);
 
-        // --> Add the key in an object
-        user.sex = "male";
+            // --> Add the key in an object
+            user.sex = "male";
 
-        console.log(user);
-        // Now sex is add in user object
+            //calling the object
+            console.log(user);
+            // Now sex is add in user object
 
-        // ----> importance of square brackets[]
+            // ----> importance of square brackets[]
 
-        // lets add new key without square brackets
-        // user.admin access = true;
-        // This will through SyntaxError 
+            // lets add new key without square brackets
 
-        // user []
-        user["admin access"] = true;
+            // user.admin access = true;
+            // This will through SyntaxError 
+
+            // user []
+            user["admin access"] = true;
+
+            // more systamatic way 
+            let key = "user access"
+            user[key] = true;
+
+            console.log(user);
+
+            // --------> Computed properties 
+
+            // Eg of normal property
+            let student = {
+                name: "Yuvi"
+            }
+
+            // Eg of computed property
+            let key1 = "name";
+
+            let stdnt = {
+                [key1]: "Yuvidon"
+            }
+
+            console.log(stdnt);
+            // output =>  Object { name: "Yuvidon" }
+
+            // another Eg
+            let fruit = "apple";
+
+            let bag = {
+                [fruit]: 5
+            };
+
+            console.log(bag);
+
+            // --------> "in" operator
+
+            console.log("apple" in bag);
+            // [in] operator just return boolean value only
+
+            // --------> "for...in" loop in object
+            let obj1 = {
+                name: "yuvi",
+                age: 21,
+                isAdmin: true
+            }
+
+            // using for loop
+            for (let key in obj1) {
+
+                console.log(key, " = ", obj1[key]);
+            }
+
+            // Ordered like an object
+            // in javascipt when loop the intergers key in object it will automatically access value in accending value
+            let object2 = {
+                "5": "value3",
+                "4": "value2",
+                "3": "value1"
+            }
+
+            for (let keys in object2) {
+
+                console.log(keys, " = ", object2[keys]);
+            }
+            // output
+            // 3  =  value1 
+            // 4  =  value2 
+            // 5  =  value3
+        }
+
+        // learnObj();
+
+        // practice question
+        function practiceObj() {
+
+            function hello() {
+                // Ques1 = Create an empty object user
+                let user = {};
+
+                // Ques2 = Add the property name with the value John.
+                // Add the property surname with the value Smith.
+                user.name = "John";
+                user.surname = "Parker";
+
+                // Ques3 =  Change the value of the name to Pete.
+                user.name = "Peter";
+
+                // Ques4 = Remove the property name from the object
+                delete user.surname;
+                console.log(user);
+            }
+
+            // hello();
+
+            // Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+
+            let schedule = {
+                ["7 : 00"]: "PR review"
+            }
+
+            let time = ("7 : 00");
+
+            // console.log(time);
+            // console.log(schedule);
+            // console.log(time in schedule);
+
+            let keyElement = Object.keys(schedule);
+
+            if ((time in schedule)) {
+                console.log("There is Schdule at", time, "of", schedule["7 : 00"]);
+            } else {
+                console.log("Free No Schedule");
+            }
+
+        }
+
+        practiceObj();
 
 
 
