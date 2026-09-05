@@ -195,8 +195,143 @@
             multiplyNumeric();
         }
 
-        practiceObj();
+        // practiceObj();
 
+        //object reference and copying
+        function referencesAndCopy() {
+            // Primitives copy by value
+            // Strings, numbers, and booleans are independently copied.
+            let message = "Hello";
+            let phrase = message;
+            phrase = "Hi";
+
+            console.log(message);
+            // message is still "Hello"
+
+
+            // Objects copy by reference
+            // An object variable holds a reference to the object.Assigning it to another variable copies that reference, so both variables point to the same object.
+            let usr = { name: "John" };
+            let admin = usr;
+
+            admin.name = "Pete";
+            console.log(usr.name); // "Pete"
+
+            // Object equality is identity equality
+            // Two variables are equal only when they reference the exact same object.
+            let a = {};
+            let b = a;
+            console.log(a === b); // true
+
+            // two totally different object
+            let x = {};
+            let y = {};
+            console.log(x === y); // false
+
+            // const prevents reassignment, not object edits
+            // You cannot replace the reference, but you can change the object’s properties.
+            const usr1 = { name: "John" };
+            usr1.name = "Pete";     // allowed
+            // usr1 = {};           // error
+
+            // Shallow cloning and merging with Object.assign
+            // Object.assign(target, ...sources) copies properties into the target, overwriting duplicate property names.Object.assign({}, obj) creates a new top - level object.Spread syntax({ ...obj }) does the same kind of shallow copy.
+            const usr2 = { name: "John", age: 30 };
+            const clon = Object.assign({}, usr2);
+
+            clon.name = "Pete";
+            console.log(usr2.name); // "John"
+
+            // Nested objects reveal the limit of a shallow copy
+            // Their nested objects are still shared by reference.
+            const usr3 = { name: "John", sizes: { width: 50 } };
+            const clone1 = Object.assign({}, usr3);
+
+            clone1.sizes.width = 60;
+            console.log(usr3.sizes.width); // 60
+
+            // Deep cloning with structuredClone
+            // structuredClone(obj) recursively copies nested objects, arrays, and supports circular references.It cannot clone functions.
+            const usr4 = { name: "John", sizes: { width: 50 } };
+            const clone = structuredClone(usr4);
+
+            clone.sizes.width = 60;
+            console.log(usr4.sizes.width); // 50
+        }
+
+        // referencesAndCopy();
+
+        // Practice question of reference and copying
+        function practiceRfrnceAndCopy() {
+
+            // 1. What does this print, and why?
+            const first = { score: 10 };
+            const second = first;
+
+            second.score = 20;
+
+            console.log(first.score);
+
+            // 2. Predict both result
+            const a = { settings: { volume: 5 } };
+            const b = Object.assign({}, a);
+
+            console.log(a.settings === b.settings);
+            b.settings.volume = 9;
+            console.log(a.settings.volume);
+
+            // 3. Write code that creates an independent copy of this object, so changing copy.address.city does not change user.address.city.
+            const user = {
+                name: "Ravi",
+                address: { city: "Delhi" }
+            };
+
+            const cloneUser = structuredClone(user);
+
+            cloneUser.address.city = "Ludhiana";
+
+            console.log(user);
+            console.log(cloneUser);
+
+            // 4. Why is this allowed, while reassigning user would not be?
+
+            // Take Eg of let keyword in object
+            let usr = { name: "yuvi" };
+
+            usr = { id: "yuvi" }
+            console.log(usr);
+            // this will allow to change the reference because of let keyword
+
+            // Now Eg of const keyword
+            const usr1 = { name: "yuvi" };
+
+            // try to change the reference
+            // usr1 = {id: "yuvi"}
+            // console.log(usr1);
+            // It will give error of Assignment to constant variable
+
+            // try to change the property of name
+            usr1.name = "YuviDon";
+            console.log(usr1);
+            // Now this will allow to change the value of reference or key in an object
+
+            // 5. Will this work? Explain
+            // structuredClone({
+                // greet() { return "Hello"; }
+            // });
+            // structuredClone is used only in object . It is not work where function comes
+            // In this example greet is a function so it will throw error of "Failed to execute . Could not be clowned."
+
+            // To assign value we use spread operator
+            const greet = () => "Hello";
+
+            const usr3 = { name: "Void", greet };
+            const copy = { ...usr3 }; // `greet` refers to the same function
+
+            console.log(copy);
+        }
+
+        practiceRfrnceAndCopy();
 
 
     </script>
