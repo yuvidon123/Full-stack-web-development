@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+
+<body style="background-color: black;">
+    <script>
+        // Learning about "this" method
+        // "this" = metod is very userfull 
+
+        function thisMethod() {
+            // Best use case of this method
+            let user = {
+                name: "Tony Stark",
+                sayHi() {
+                    console.log(this.name);
+                }
+            };
+
+            // lets copy the whole object and null after it
+            let newUser = user;
+            user = null;
+
+            // lets call the function and check if we copy correctly or not
+            newUser.sayHi();
+            // It will work properly
+
+            // Now if we use "user.name" instead of "this.name"
+            let user2 = {
+                name: "Tony Stark",
+                sayHi() {
+                    console.log(user2.name);
+                }
+            }
+
+            // lets copy the whole object and null after it
+            let newUser1 = user;
+            user = null;
+
+            // lets call the function and check if we copy correctly or not
+            newUser1.sayHi();
+            // Now it will throw error of "TypeError : Cannot read properties of null"
+
+
+            // eg of using of only this in function
+            let proto = {
+                name: "tony",
+                ref: this
+            }
+
+            console.log(proto);
+
+            let proto2 = {
+                name: "stark",
+                refe() {
+                    return this;
+                }
+            };
+
+            console.log(proto2.refe());
+
+        }
+        // thisMethod();
+
+        function practice() {
+
+            // Ques 1
+            function thisInObjectLiteral() {
+                // 1. Using this in an object literal
+                // Determine what user.ref.name produces when ref: this is created inside a normal function.
+
+                // create an object inside the function
+                function makeUser() {
+                    return {
+                        name: "John",
+                        ref: this
+                    };
+                }
+
+                let user = makeUser();
+
+                console.log(user.ref.name); // What's the result?    
+                // It will give undefined error;
+
+                // SOLUTION ->
+                function makeNewUser() {
+                    return {
+                        name: "Yuvi",
+                        ref() {
+                            return this;
+                        }
+                    }
+                }
+
+                // assign value to other
+                let newUser = makeNewUser();
+
+                console.log(newUser.name);
+                console.log(newUser.ref())
+
+            }
+            // thisInObjectLiteral()
+
+            // Ques 2
+            function calculator() {
+                // Create an object calculator with three methods:
+
+                // read() prompts for two values and saves them as object properties with names a and b respectively.
+                // sum() returns the sum of saved values.
+                // mul() multiplies saved values and returns the result.
+
+                let calc = {
+                    read() {
+                        // this.a and this.b creates and object key which can access anywhere.
+                        this.a = +prompt('a', 0);
+                        this.b = +prompt('b', 0);
+                        // + == convert to Number
+                    },
+
+                    sum() {
+                        return (this.a + this.b);
+                    },
+
+                    multi() {
+                        return (this.a * this.b);
+                    }
+                }
+
+                console.log(calc.read());
+                console.log(calc.sum());
+                console.log(calc.multi());
+            }
+
+            // calculator();
+
+            // Ques 3
+            function chaining() {
+                // let ladder = {
+                //     step: 0,
+                //     up() {
+                //         this.step++;
+                //     },
+                
+                //     down() {
+                //         this.step--;
+                //     },
+
+                //     showStep: function () { // shows the current step
+                //         console.log(this.step);
+                //     }
+                // };
+
+                // ladder.up();
+                // ladder.down();
+
+                //Modify the code of up, down, and showStep to make the calls chainable, like this:
+                // ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
+
+                let ladder = {
+                    step: 0,
+                    up() {
+                        this.step++;
+                        return this;
+                    },
+
+                    down() {
+                        this.step--;
+                        return this;
+                    },
+
+                    showStep: function () { // shows the current step
+                        console.log(this.step);
+                        return this;
+                    }
+
+                    // :- Impo: we use "return this" in all function to give access of whole object and literals 
+                };
+
+                ladder.up().down().showStep();
+
+            }
+
+            // chaining();
+        }
+
+        // practice();
+
+    </script>
+</body>
+
+</html>
