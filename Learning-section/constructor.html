@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: black">
+    <script>
+        // CONSTRUCTOR
+
+        function constructor() {
+            // Constructor is a special function which allow to create a multiple functions of one particular function without given error.
+            // Eg fo Constructor function
+
+            function User(name) {
+                this.name = name;
+                this.isAdmin = false;
+            }
+
+            // a "new User" is constructor function in which it create same function of User and assign the new variable.
+            let user = new User("Jack");
+
+            console.log(user.name); // Jack
+            console.log(user.isAdmin); // false
+
+            // "new.target" It is undefined for regular calls and equals the function if called with new:
+            function User1(name) {
+                name: this.name;
+                return new.target;
+            }
+
+            console.log(User1("yuvi"));
+            console.log(new User1());
+
+            // best example of new.target
+            function User(name) {
+                if (!new.target) {
+                    // if you run me without new
+                    return new User(name); // ...I will add new for you
+                }
+
+                this.name = name;
+            }
+
+            let john = User("John"); // redirects call to new User
+            console.log(john.name); // John
+
+            // Methods in constructor
+            function naam(name) {
+                ((this.name = name),
+                    // we can't use this "this.sayhi() "
+                    // because this will create a function not property. we need property so we use below method
+                    (this.sayhi = function () {
+                        // now sayhi is the property not the function but their value is a function
+                        console.log("My name is ", name);
+                    }));
+            }
+
+            let yuvi = new naam("yuvi");
+            yuvi.sayhi();
+        }
+
+        //practice
+        function practice() {
+            // Ques-1 Is it possible to create functions A and B so that new A() == new B()?
+            function ques1() {
+                // Create the global object to access anyone
+                let obj = {};
+
+                // create constructor function 1
+                function confunction1() {
+                    // store and navigate to global object
+                    return obj;
+                }
+
+                // create constructor function 1
+                function confunction2() {
+                    // store and navigate to global object
+                    return obj;
+                }
+
+                let obj1 = new confunction1();
+                let obj2 = new confunction2();
+
+                console.log(obj1 == obj2);
+                // this will return true because its the same object
+
+                console.log(confunction1 == confunction2);
+                // this will return false because the function has different stored value
+            }
+
+            // ques1();
+
+            // Ques-2 Create a Calculator
+            function ques2() {
+                // Create a constructor function Calculator that creates objects with 3 methods:
+
+                // read() prompts for two values and saves them as object properties with names a and b respectively.
+                // sum() returns the sum of these properties.
+                // mul() returns the multiplication product of these properties.
+
+                function calculator() {
+                    ((this.read = function () {
+                        this.a = +prompt("Enter", "0");
+                        this.b = +prompt("Enter", "0");
+                    }),
+                        (this.sum = function () {
+                            return this.a + this.b;
+                        }),
+                        (this.multi = function () {
+                            return this.a * this.b;
+                        }));
+                }
+
+                let Calc = new calculator();
+                Calc.read();
+
+                console.log(Calc.sum());
+                console.log(Calc.multi());
+
+                // In this program, function Calculator is a constructor function. " let calc "is a variable who points to the object, and new Calculator is an actual object.
+            }
+
+            // ques2();
+
+            // Ques-3 Create new Accumulator
+            function ques3() {
+                //Create a constructor function Accumulator(startingValue).
+
+                // Object that it creates should:
+
+                // Store the “current value” in the property value. The starting value is set to the argument of the constructor startingValue.
+                // The read() method should use prompt to read a new number and add it to value.
+                // In other words, the value property is the sum of all user-entered values with the initial value startingValue.
+
+                function Accumulator(startingValue) {
+                    ((this.value = startingValue),
+
+                        // my first approach
+                        // this.read = function () {
+                        //     this.a = +prompt('Enter value', '0');
+                        //     return this.value += this.a;     
+                        // }
+
+                        // better approach
+                        (this.read = function () {
+                            this.value += +prompt("Enter value", "0");
+                        }));
+                }
+
+                let accumulator = new Accumulator(1);
+
+                accumulator.read(); // adds the user-entered value
+                accumulator.read(); // adds the user-entered value
+
+                console.log(accumulator.value); // shows the sum of these values
+            }
+
+            ques3();
+        }
+
+        practice();
+    </script>
+</body>
+
+</html>
