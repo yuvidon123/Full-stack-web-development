@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+
+<body style="background-color: black;">
+    <script>
+        // The optional chaining ?. is a safe way to access nested object properties, even if an intermediate property doesn’t exist. 
+
+        //if we access and key in an object which is not declare 
+        let user = {}; // a user without "address" property
+
+        // alert(user.address.street); // It will give Error!
+
+        // But if we use like this
+        alert(user.address ? user.address.street : undefined);
+        // This will now 
+
+    </script>
+</body>
+
+</html>
