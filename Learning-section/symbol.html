@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols</title>
+</head>
+
+<body style="background-color: white;">
+    <script>
+        function symbols() {
+            // Symbols
+            // A “symbol” represents a unique identifier.
+            // 
+            // A value of this type can be created using Symbol():
+            // 
+            let id = Symbol();
+
+            // id is a symbol with the description "id"
+            let id1 = Symbol("id1");
+
+            // Both are symbols but there are not same as other
+            console.log(id == id1); // false
+
+            // Symbols don’t auto-convert to a string
+            // alert(id1); // TypeError: Cannot convert a Symbol value to a string
+            console.log(id1.toString());
+
+            // we get symbol.description property to show the description only:
+            console.log(id1.description);
+        }
+        // symbols()
+        function eg1() {
+            // Example 1
+            let user = { // belongs to another code
+                name: "John"
+            };
+
+            let id = Symbol("id");
+
+            user[id] = 1;
+
+            console.log(user[id]); // we can access the data using the symbol as the key
+
+            // we can symbol inside object literals
+            // insitialize symbol
+            let age = Symbol("age");
+
+            let usr = {
+                name: "yuvi",
+                [age]: 21 // use symbol variable here
+            }
+        }
+        // eg1();
+
+        function symbolsAreSkipped() {
+            //Symbolic properties do not participate in for..in loop.
+            //eg.1
+            let age = Symbol("age");
+
+            let usr = {
+                name: "yuvi",
+                [age]: 21 // use symbol variable here
+            }
+
+            for (let key in usr) {
+                console.log(key);// only name will show now age because its symbol
+            }
+        }
+        // symbolsAreSkipped();
+
+        function globalSymbol() {
+            // set value of id
+            // ".for" make symbol global
+            let id = Symbol.for("id");
+
+            // It will check the if "id" was there than it will assign same value not create a new id.
+            let id2 = Symbol.for("id");
+
+            // now id2 is point to id symbols description
+            console.log(id == id2);// true
+        }
+        // globalSymbol();
+
+        function keyFor() {
+            // assign global symbols
+            let id = Symbol.for("id");
+            let name = Symbol.for("name");
+
+            // Key for help to show the description of global symbols only 
+            console.log(Symbol.keyFor(id)); // id
+            console.log(Symbol.keyFor(name)); // name
+        }
+        // keyFor();
+
+
+
+    </script>
+</body>
+
+</html>
