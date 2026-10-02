@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strings</title>
+</head>
+
+<body>
+    <script>
+
+        function eg1() {
+            // best use case of strings and string methods\
+            let str = "As sly as a fox, as strong as an ox";
+
+            let word = "as";
+            let pos = 1;
+            while (true) {
+                let foundPos = str.indexOf(word, pos);
+
+                if (foundPos == -1) {
+                    break;
+                }
+
+                alert(foundPos);
+                pos = foundPos + 1;
+            }
+        }
+        // eg1()
+
+        // shorter way
+        function eg2() {
+            let str = "As sly as a fox, as strong as an ox";
+            let target = "as";
+
+            let pos = -1;
+            while ((pos = str.indexOf(target, pos + 1)) != -1) {
+                alert(pos);
+            }
+        }
+        eg2();
+
+    </script>
+</body>
+
+</html>

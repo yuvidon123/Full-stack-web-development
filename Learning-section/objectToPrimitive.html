@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object to Primitive conversion</title>
+</head>
+
+<body>
+    <script>
+        // Object to primitive convertion
+        // In this we convert the object into primitive data type
+
+        //eg 1
+        function eg1() {
+            let obj = {
+                name: "yuvi",
+                age: 21,
+
+                [Symbol.toPrimitive](hint) {
+                    alert(`hint: ${hint}`);
+                    return hint == "string" ? `{Name: "${this.name}"}` : this.age;
+                }
+            };
+            alert(obj); // String , yuvi
+            alert(obj++); // number, 21    
+        }
+        // eg1()
+
+        function eg2() {
+            // use old method to define object to primitive 
+            let obj = {
+                name: "yuvi",
+                age: "21",
+
+                // hint = "string"
+                toString() {
+                    return `{name: "${this.name}"}`;
+                },
+
+                // hint = "number" or default
+                valueOf() {
+                    return `${this.age}`;
+                }
+            }
+
+            alert(obj);
+            alert(obj++);
+        }
+        // eg2();
+
+        function eg3() {
+            // what if we take only one primitive type in an object
+            let obj = {
+                name: "yuvi",
+
+                toString() {
+                    return `{name: "${this.name}"}`;
+                }
+            }
+
+            alert(obj + 500); // print "yuvi500"
+        }
+        eg3();
+
+    </script>
+</body>
+
+</html>
