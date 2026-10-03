@@ -39,7 +39,83 @@
                 alert(pos);
             }
         }
-        eg2();
+        // eg2();
+
+        function eg4() {
+            //Write a function ucFirst(str) that returns the string str with the uppercased first character, for instance:
+            // ucFirst("john") == "John";
+
+            function ucFirst(name) {
+                // This will return name if the name is empty and null and not execute futher program
+                if (!name) return name;
+
+                // This will make first letter uppercase and add 1 to end char
+                return name[0].toUpperCase() + name.slice(1);
+            }
+            alert(ucFirst());// undefined 
+            alert(ucFirst("hlo")); // Hlo
+        }
+        // eg4();
+
+        function eg5() {
+            //Write a function checkSpam(str) that returns true if str contains ‘viagra’ or ‘XXX’, otherwise false.
+
+            // The function must be case-insensitive:-
+            // checkSpam('buy ViAgRA now') == true
+            // checkSpam('free xxxxx') == true
+            // checkSpam("innocent rabbit") == false
+
+            function checkSpam(str) {
+
+                if (str.toLowerCase().includes("viagra") || str.toLowerCase().includes("xxx")) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            alert(checkSpam('buy ViAgRA now')) // true
+            alert(checkSpam('free xxxxx')) // true
+            alert(checkSpam("innocent rabbit")) // false
+        }
+        // eg5();
+
+        function eg6() {
+            // Create a function truncate(str, maxlength) that checks the length of the str and, if it exceeds maxlength – replaces the end of str with the ellipsis character "…", to make its length equal to maxlength.
+
+            // For instance:           
+            // truncate("What I'd like to tell on this topic is:", 20) == "What I'd like to te…"
+            // truncate("Hi everyone!", 20) == "Hi everyone!"
+
+            function truncate(str, maxlength) {
+                if (str.length > maxlength) {
+                    return (str.substring(0, maxlength - 1)) + "...";
+                }
+
+                return str;
+            }
+            alert(truncate("Hlo there hooooooooooo", 10));
+            alert(truncate("What I'd like to tell on this topic is:", 20));
+            alert(truncate("Hi everyone!", 20));
+        }
+        // eg6();
+
+        function eg7() {
+            // We have a cost in the form "$120". That is: the dollar sign goes first, and then the number.
+
+            // Create a function extractCurrencyValue(str) that would extract the numeric value from such string and return it.
+
+            // The example:
+            // alert( extractCurrencyValue('$120') === 120 ); // true
+
+            function extractCurrencyValue(str) {
+                return +str.slice(1); // '+' will convert or tell the compiler it is number
+            
+            }
+
+            alert(extractCurrencyValue("$120") == 120);
+        }
+        eg7();
 
     </script>
 </body>
